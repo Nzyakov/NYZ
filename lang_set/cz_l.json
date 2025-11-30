@@ -1,0 +1,19 @@
+{
+"language": "Czech",
+"nav_home": "O mně",
+"nav_projects": "Projekty",
+"hero_title": "AHOJ! JE SKVĚLÉ,<br>ŽE JSTE TADY.",
+"hero_subtitle": "Vítejte v mém osobním koutku na internetu. Zvu vás, abyste se se mnou seznámili a prohlédli si projekty/práce.",
+"project_title": "NÁHLED PROJEKTŮ",
+"project_subtitle": " Většina těchto projektů vznikla v průběhu mého studia na střední škole nebo na univerzitě. Níže se jedná pouze o náhledy (previews).<br>Pro více informací o každém projektu klikněte na tlačítko:",
+"project_button": "ZDE",
+"project_ASCII":"ASCII ART GENERATOR",
+"ASCII_dscrp": "ASCII ART GENERATOR - program generuje různé ASCII tvary (obdélníky, rámce, úhlopříčky) pomocí symbolu 'x' na základě tří vstupních čísel.",
+"projeck_ANSI": "ANSI ESCAPE SEKVENCI",
+"ANSI_dscrp": "ANSI ESCAPE SEKVENCI - program definuje funkce pro vykreslení přerušované čáry, schodů, květiny a louky (včetně animace), vše s proměnnou velikostí.",
+"projec_GREP": "GREP PARSER",
+"GREP_dscrp": "GREP PARSER - program parsuje argumenty, vyhledává text ve vstupním souboru s volitelným ignorováním velikosti písmen a vypisuje nalezené řádky.",
+"project_ZELV": "DYNAMICKÁ ŽELVIČKA",
+"ZELV_dscrp": "DYNAMICKÁ ŽELVIČKA - program ovládá želvičky (max. 3) na dynamicky alokovaném 2D plátně, které se pohybují, otáčejí a kreslí/mažou pixely 'o' s toroidním přesahem.",
+"footer_INF": " © 2025 | Created by Nazar Yakovenko [Nzayakov]"
+}

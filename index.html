@@ -14,12 +14,20 @@
             <div class="logo">NZY</div>
 
             <nav class="nav">
-                <a href="#about">O mně</a>
-                <a href="#projects">Projekty</a>
+                <a href="#about" data-lang="nav_home"></a>
+                <a href="#projects" data-lang="nav_projects"></a>
             </nav>
 
-            <div class="lang">
-                <img src="img/lang_set_cz.svg" alt="CZ">
+            <div class="langswitcher">
+                <button onclick="setLanguage('cs')">
+                    <img src="img/lang_set_cz.svg">
+                </button>
+                <button onclick="setLanguage('en')">
+                    <img src="img/lang_set_en.svg">
+                </button>
+                <button onclick="setLanguage('uk')">
+                    <img src="img/lang_set_uk.svg">
+                </button>
             </div>
         </div>
     </header>
@@ -30,12 +38,12 @@
         <div class="container hero__grid">
 
             <div class="hero__text">
-                <h1>AHOJ! JE SKVĚLÉ,<br>ŽE JSTE TADY.</h1>
-                <p class="hero__p">Vítejte v mém osobním koutku na internetu. Zvu vás, abyste se se mnou seznámili a prohlédli si projekty/práce.</p>
+                <h1 data-lang="hero_title"></h1>
+                <p class="hero__p" data-lang="hero_subtitle"></p>
 
                 <div class="hero__buttons">
-                    <a href="#about" class="btn btn--outline">O mně</a>
-                    <a href="#projects" class="btn btn--blue">Projekty</a>
+                    <a href="#about" class="btn btn--outline" data-lang="nav_home"></a>
+                    <a href="#projects" class="btn btn--blue" data-lang="nav_projects"></a>
                 </div>
             </div>
 
@@ -52,41 +60,38 @@
     <section id="projects" class="projects">
         <div class="container">
 
-            <h2>NÁHLED PROJEKTŮ</h2>
-            <p class="projects__desc">
-                Většina těchto projektů vznikla v průběhu mého studia na střední škole nebo na univerzitě.<br>
-                Níže se jedná pouze o náhledy (previews).
-            </p>
+            <h2 data-lang="project_title"></h2>
+            <p class="projects__desc" data-lang="project_subtitle"></p>
 
-            <a class="btn btn--blue projects__btn">ZDE</a>
+            <a class="btn btn--blue projects__btn" data-lang="project_button"></a>
 
             <div class="projects__grid">
                 <a href="#projects">
                 <div class="project-card">
-                    <h3>ASCII ART GENERATOR</h3>
+                    <h3 data-lang="project_ASCII"></h3>
                     <img src="img/ascii.svg" class="project-img">
-                    <p>Program generuje ASCII tvary (obdélníky, rámce, úhlopříčky)…</p>
+                    <p data-lang="ASCII_dscrp"></p>
                 </div>
                 </a>
                 <a href="#projects">            
                 <div class="project-card">
-                    <h3>ANSI ESCAPE SEKVENCI</h3>
+                    <h3 data-lang="projeck_ANSI"></h3>
                     <img src="img/p2.png" class="project-img">
-                    <p>Program vykresluje animace, schody, květiny pomocí escape sekvencí.</p>
+                    <p data-lang="ANSI_dscrp"></p>
                 </div>
                 </a>
                 <a href="#projects">        
                 <div class="project-card">
-                    <h3>GREP PARSER</h3>
+                    <h3 data-lang="projec_GREP"></h3>
                     <img src="img/p3.png" class="project-img">
-                    <p>Vyhledávání, filtrování textu, ignorování velikosti písmen…</p>
+                    <p data-lang="GREP_dscrp"></p>
                 </div>
                 </a>
                  <a href="#projects">   
                 <div class="project-card">
-                    <h3>DYNAMICKÁ ŽELVIČKA</h3>
+                    <h3 data-lang="project_ZELV"></h3>
                     <img src="img/p4.png" class="project-img">
-                    <p>Simulace želviček na 2D plátně s toroidním přesahem.</p>
+                    <p data-lang="ZELV_dscrp"></p>
                 </div>
                 </a>
             </div>
@@ -108,9 +113,7 @@
                         <img src="img/git_logo.svg" alt="GitHub">
                     </a>
                 </div>
-            <p class="footer__copy">
-                © 2025 | Created by Nazar Yakovenko [Nzayakov]
-            </p>
+            <p class="footer__copy" data-lang="footer_INF"></p>
         </div>
     </footer>
 

@@ -1,0 +1,19 @@
+{
+  "language": "English",
+  "nav_home": "About Me",
+  "nav_projects": "Projects",
+  "hero_title": "HELLO! IT'S GREAT,<br>THAT YOU'RE HERE.",
+  "hero_subtitle": "Welcome to my personal corner on the internet. I invite you to get to know me and check out my projects/work.",
+  "project_title": "PROJECT PREVIEW",
+  "project_subtitle": "Most of these projects were created during my high school or university studies. Below are only previews.<br>For more information on each project, click the button:",
+  "project_button": "HERE",
+  "project_ASCII": "ASCII ART GENERATOR",
+  "ASCII_dscrp": "ASCII ART GENERATOR - a program that generates various ASCII shapes (rectangles, frames, diagonals) using the symbol 'x' based on three input numbers.",
+  "projeck_ANSI": "ANSI ESCAPE SEQUENCES",
+  "ANSI_dscrp": "ANSI ESCAPE SEQUENCES - the program defines functions to draw dashed lines, stairs, flowers, and meadows (including animations), all with variable size.",
+  "projec_GREP": "GREP PARSER",
+  "GREP_dscrp": "GREP PARSER - the program parses arguments, searches text in an input file with optional case-insensitivity, and prints the found lines.",
+  "project_ZELV": "DYNAMIC TURTLE",
+  "ZELV_dscrp": "DYNAMIC TURTLE - the program controls turtles (max. 3) on a dynamically allocated 2D canvas, which move, rotate, and draw/erase pixels 'o' with toroidal wrapping.",
+  "footer_INF": "© 2025 | Created by Nazar Yakovenko [Nzayakov]"
+}
