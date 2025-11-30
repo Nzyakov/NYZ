@@ -11,7 +11,7 @@
 <body>
     <!-- HEADER -->
     <header class="header">
-        <div class="container header__inner">
+        <div class="container header__inner">                                                                                                                                                                                                                            
             <div class="logo">NZY</div>
 
             <nav class="nav">
@@ -25,13 +25,21 @@
                         <img src="img/lang_set_cz.svg" alt="CZ"> Czech
                     </div>
                     <div class="select-items select-hide">
-                        <div data-lang="cs"><img src="img/lang_set_cz.svg" alt="CZ"> Czech</div>
-                        <div data-lang="en"><img src="img/lang_set_en.svg" alt="EN"> English</div>
-                        <div data-lang="uk"><img src="img/lang_set_uk.svg" alt="UK"> Українська</div>
+                        <div data-lang="cs">
+                            <img src="img/lang_set_cz.svg" alt="CZ"> Czech
+                        </div>
+                        <div data-lang="en">
+                            <img src="img/lang_set_en.svg" alt="EN"> English
+                        </div>
+                        <div data-lang="uk">
+                            <img src="img/lang_set_uk.svg" alt="UK"> Українська
+                        </div>
                     </div>
                 </div>
-
-                <button id="themeSwitcher">🌞 / 🌙</button>
+            </div>
+        
+            <div class="theme-switcher">
+                <img id="themeSwitcher" src="img/moon.png" alt="Switch Theme">
             </div>
         </div>
     </header>
@@ -72,17 +80,17 @@
                 </div>
                 <div class="project-card">
                     <h3 data-lang="projeck_ANSI"></h3>
-                    <img src="img/p2.png" class="project-img">
+                    <img src="img/ANSI.svg" class="project-img">
                     <p data-lang="ANSI_dscrp"></p>
                 </div>
                 <div class="project-card">
                     <h3 data-lang="projec_GREP"></h3>
-                    <img src="img/p3.png" class="project-img">
+                    <img src="img/GREP.svg" class="project-img">
                     <p data-lang="GREP_dscrp"></p>
                 </div>
                 <div class="project-card">
                     <h3 data-lang="project_ZELV"></h3>
-                    <img src="img/p4.png" class="project-img">
+                    <img src="img/ZELV.svg" class="project-img">
                     <p data-lang="ZELV_dscrp"></p>
                 </div>
             </div>
@@ -95,7 +103,7 @@
             <div class="socials">
                 <a href="https://t.me/nzayakov" target="_blank"><img src="img/tg_logo.svg" alt="Telegram"></a>
                 <a href="https://discord.gg/vnrNCaxX" target="_blank"><img src="img/discord_logo.svg" alt="Discord"></a>
-                <a href="https://github.com/Nzyakov" target="_blank"><img src="img/git_logo.svg" alt="GitHub"></a>
+                <a href="https://github.com/Nzyakov" target="_blank"><img class="git_logo" src="img/git_logo.svg" alt="GitHub"></a>
             </div>
             <p class="footer__copy" data-lang="footer_INF"></p>
         </div>
