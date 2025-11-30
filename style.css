@@ -131,14 +131,21 @@ body {
     transform: rotate(-8deg);
     top: -40px;
     left: -40px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
+.code--1:hover {
+    transform: scale(1.05);
+}
 .code--2 {
     transform: rotate(8deg);
     top: 110px;
     left: 110px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.code--2:hover {
+    transform: scale(1.05);
+}
 /* PROJECTS */
 .projects {
     padding: 80px 0;
@@ -171,6 +178,13 @@ body {
     padding: 20px;
     border-radius: 16px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.55),
+    0 0 10px rgba(93,167,255,0.25);
 }
 
 .project-card h3 {
@@ -197,13 +211,7 @@ body {
     transform: scale(1.15);
     opacity: 0.8;
 }
-.projects__grid a .project-card {
-    transition: 0.2s ease;
-}
-.projects__grid a .project-card:hover {
-    transform: scale(1.15);
-    opacity: 0.8;
-}
+
 .socials img {
     width: 32px;
     margin: 0 10px;
@@ -214,7 +222,10 @@ body {
     color: #888;
 }
 
-/* RESPONSIVE */
+
+
+
+/* MEDIA QUERIES */
 @media (max-width: 1080px) {
     .projects__grid {
         grid-template-columns: repeat(2, 1fr);
