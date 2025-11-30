@@ -13,7 +13,13 @@ body {
     color: #e4e4e4;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
+    background: #15070a url('img/GRAD.svg') no-repeat center/cover;
+    background-size: min(1100px, 95vw);
+    background-repeat: no-repeat;
+    background-position: center top;
 }
+
+
 
 /* CONTAINER */
 .container {
@@ -59,7 +65,7 @@ body {
     width: 32px;
 }
 
-/* HERO */
+/* HERO_reamper */
 .hero {
     padding: 150px 0;
 }
