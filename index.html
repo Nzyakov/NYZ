@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NZY</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="themeLink" rel="stylesheet" href="style_dark.css">
     <link rel="icon" href="img/qqq.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -20,11 +20,18 @@
             </nav>
 
             <div class="langswitcher">
-                <select id="languageSelect">
-                    <option value="cs">🇨🇿 Czech</option>
-                    <option value="en">🇬🇧 English</option>
-                    <option value="uk">🇺🇦 Українська</option>
-                 </select>
+                <div class="custom-select">
+                    <div class="select-selected">
+                        <img src="img/lang_set_cz.svg" alt="CZ"> Czech
+                    </div>
+                    <div class="select-items select-hide">
+                        <div data-lang="cs"><img src="img/lang_set_cz.svg" alt="CZ"> Czech</div>
+                        <div data-lang="en"><img src="img/lang_set_en.svg" alt="EN"> English</div>
+                        <div data-lang="uk"><img src="img/lang_set_uk.svg" alt="UK"> Українська</div>
+                    </div>
+                </div>
+
+                <button id="themeSwitcher">🌞 / 🌙</button>
             </div>
         </div>
     </header>
@@ -86,21 +93,14 @@
     <footer class="footer">
         <div class="container footer__inner">
             <div class="socials">
-                <a href="https://t.me/nzayakov" target="_blank">
-                    <img src="img/tg_logo.svg" alt="Telegram">
-                </a>
-                <a href="https://discord.gg/Nzayakov" target="_blank">
-                    <img src="img/discord_logo.svg" alt="Discord">
-                </a>
-                <a href="https://github.com/Nzyakov" target="_blank">
-                    <img src="img/git_logo.svg" alt="GitHub">
-                </a>
+                <a href="https://t.me/nzayakov" target="_blank"><img src="img/tg_logo.svg" alt="Telegram"></a>
+                <a href="https://discord.gg/vnrNCaxX" target="_blank"><img src="img/discord_logo.svg" alt="Discord"></a>
+                <a href="https://github.com/Nzyakov" target="_blank"><img src="img/git_logo.svg" alt="GitHub"></a>
             </div>
             <p class="footer__copy" data-lang="footer_INF"></p>
         </div>
     </footer>
 
-    <!-- Подключаем JS -->
     <script src="script.js"></script>
 </body>
 </html>

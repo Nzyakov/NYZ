@@ -1,0 +1,263 @@
+/* ========================== */
+/* Light Theme */
+/* ========================== */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background: #f8f8f8 url('img/GRAD.svg') no-repeat center/cover;
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-size: min(1100px, 95vw);
+    background-position: center top;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+    padding: 24px 0;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(14px);
+    background-color: rgba(255,255,255,0.8);
+    z-index: 10;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ff7f50;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.nav a {
+    margin-right: 28px;
+    color: #333;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+.nav a:hover {
+    opacity: 1;
+}
+
+.lang img {
+    width: 32px;
+    border: none; 
+}
+
+/* HERO */
+.hero {
+    padding: 150px 0;
+}
+
+.hero__grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero__text h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    color: #ff7f50;
+}
+
+.hero__p {
+    margin-top: 20px;
+    color: #555;
+    max-width: 480px;
+}
+
+.hero__buttons {
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 14px;
+    font-weight: 600;
+    margin-right: 14px;
+    transition: 0.2s ease;
+}
+
+.btn--outline {
+    border: 2px solid #ff9900;
+    color: #ff9900;
+}
+
+.btn--outline:hover {
+    background: #ff990022;
+}
+
+.btn--blue {
+    background: #3399ff;
+    color: #fff;
+}
+
+.btn--blue:hover {
+    background: #66b3ff;
+}
+
+/* HERO IMAGES */
+.hero__images {
+    position: relative;
+    width: 480px;
+    height: 420px;
+}
+
+.code {
+    position: absolute;
+    width: 360px;
+    filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.15));
+}
+
+.code--1 {
+    transform: rotate(-8deg);
+    top: -40px;
+    left: -40px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.code--1:hover {
+    transform: scale(1.05);
+}
+.code--2 {
+    transform: rotate(8deg);
+    top: 110px;
+    left: 110px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* PROJECTS */
+.projects {
+    padding: 80px 0;
+}
+
+.projects h2 {
+    font-size: 46px;
+    color: #ff7f50;
+}
+
+.projects__desc {
+    margin: 20px 0;
+    max-width: 600px;
+    color: #666;
+}
+
+.projects__btn {
+    margin: 20px 0;
+}
+
+.projects__grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+}
+
+.project-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25),
+                0 0 10px rgba(51,153,255,0.25);
+}
+
+.project-card h3 {
+    color: #3399ff;
+}
+
+.project-img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 14px 0;
+}
+
+/* FOOTER */
+.footer {
+    padding: 50px 0;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+.socials a img {
+    transition: 0.2s ease;
+}
+
+.socials a:hover img {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+.socials img {
+    width: 32px;
+    margin: 0 10px;
+}
+
+.footer__copy {
+    margin-top: 18px;
+    color: #666;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1080px) {
+    .projects__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 860px) {
+    .hero__grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero__images {
+        margin-top: 40px;
+        width: 320px;
+        height: 280px;
+    }
+
+    .code {
+        width: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__text h1 {
+        font-size: 48px;
+    }
+}
