@@ -1,3 +1,4 @@
+/* ================== DARK THEME ================== */
 /* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 a { text-decoration: none; color: inherit; }
@@ -27,18 +28,16 @@ body {
 .nav a { margin-right: 28px; color: #ddd; opacity: 0.85; transition: 0.2s ease; }
 .nav a:hover { opacity: 1; }
 
-/* THEME SWITCHER */
 .theme-switcher img {
     width: 110px; height: 64px; cursor: pointer; transition: transform 0.2s ease;
 }
 .theme-switcher img:hover { transform: scale(1.1); }
 
-/* LANGUAGE SELECT */
-.custom-select {
-    position: relative; width: 150px; font-family: 'Inter', sans-serif; user-select: none;
-}
+/* CUSTOM SELECT */
+.custom-select { position: relative; width: 150px; font-family: 'Inter', sans-serif; user-select: none; }
 .select-selected {
-    background-color: #1c1e22; color: #FFD233;
+    background-color: #a0343433; color: #FFD233;
+    backdrop-filter: blur(14px);
     padding: 8px 12px; border-radius: 12px;
     cursor: pointer; display: flex; align-items: center; gap: 8px;
 }
@@ -47,10 +46,7 @@ body {
     top: 100%; left: 0; right: 0; border-radius: 12px;
     margin-top: 4px; z-index: 99; display: flex; flex-direction: column; overflow: hidden;
 }
-.select-items div {
-    padding: 8px 12px; display: flex; align-items: center; gap: 8px;
-    cursor: pointer; transition: background 0.2s;
-}
+.select-items div { padding: 8px 12px; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: background 0.2s; }
 .select-items div:hover { background-color: #5da7ff33; }
 .select-hide { display: none; }
 .select-items img, .select-selected img { width: 24px; height: auto; display: block; border: none; }
@@ -68,11 +64,11 @@ body {
 .btn--blue:hover { background: #84bbff; }
 
 /* HERO IMAGES */
-.hero__images { position: relative; width: 480px; height: 420px; }
+.hero__images {transform: scale(1.2); position: relative; width: 530px; height: 470px; }
 .code { position: absolute; width: 360px; filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.5)); }
-.code--1 { transform: rotate(-8deg); top: -40px; left: -40px; transition: transform 0.25s ease; }
+.code--1 { transform: rotate(-8deg) translateY(100px) scale(1.2); top: -40px; left: -40px; transition: transform 0.25s ease, box-shadow 0.25s ease; }
 .code--1:hover { transform: scale(1.05); }
-.code--2 { transform: rotate(8deg); top: 110px; left: 110px; transition: transform 0.25s ease; }
+.code--2 { transform: rotate(8deg) translateY(50px) scale(1.1); top: 110px; left: 110px; transition: transform 0.25s ease, box-shadow 0.25s ease; }
 .code--2:hover { transform: scale(1.05); }
 
 /* PROJECTS */
@@ -81,37 +77,65 @@ body {
 .projects__desc { margin: 20px 0; max-width: 600px; color: #bdbdbd; }
 .projects__btn { margin: 20px 0; }
 .projects__grid { margin-top: 40px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
-.project-card {
-    background: #1c1e22; padding: 20px; border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4); transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.project-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.55), 0 0 10px rgba(93,167,255,0.25);
-}
+.project-card { background: #180801; padding: 20px; backdrop-filter: blur(14px);  z-index: 10; border-radius: 16px; box-shadow: 0 8px 25px rgba(255, 215, 36, 0.884); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.project-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 15px 40px rgba(116, 144, 221, 0.705), 0 0 10px rgba(93,167,255,0.25); }
 .project-card h3 { color: #5da7ff; }
-.project-card p { color: #fff; }
+.project-card p { color: #ffffff; }
 .project-img { width: 100%; border-radius: 12px; margin: 14px 0; }
 
 /* FOOTER */
-.socials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px; /* расстояние между иконками */
-}
-
 .footer { padding: 50px 0; text-align: center; }
 .socials a img { transition: 0.2s ease; }
 .socials a:hover img { transform: scale(1.15); opacity: 0.8; }
 .socials img { width: 32px; margin: 0 10px; }
 .footer__copy { margin-top: 18px; color: #888; }
+.git_logo { width: 36px; height: 50px; }
+.footer .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* выравнивание по вертикали */
+    gap: 15px; /* расстояние между иконками */
+    flex-wrap: wrap; /* чтобы иконки не вылазили за ширину на мобилках */
+}
 
+.footer .socials a img {
+    width: 36px;  /* одинаковый размер для всех иконок */
+    height: 36px; /* одинаковый размер для всех иконок */
+    transition: 0.2s ease;
+}
+
+.footer .socials a:hover img {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+/* маленький экран */
+@media (max-width: 480px) {
+    .footer .socials a img {
+        width: 32px;
+        height: 32px;
+    }
+}
 /* MEDIA QUERIES */
-@media (max-width: 1080px) { .projects__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1080px) { .projects__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
 @media (max-width: 860px) {
     .hero__grid { flex-direction: column; text-align: center; }
-    .hero__images { margin-top: 40px; width: 320px; height: 280px; }
+    .hero__images { width: 320px; height: 280px; margin-top: 40px; }
     .code { width: 240px; }
+    .btn { padding: 10px 20px; font-size: 14px; }
 }
-@media (max-width: 480px) { .projects__grid { grid-template-columns: 1fr; } .hero__text h1 { font-size: 48px; } }
+@media (max-width: 480px) {
+    .projects__grid { grid-template-columns: 1fr; }
+    .hero__text h1 { font-size: 36px; line-height: 1.2; }
+    .hero__p { font-size: 14px; }
+    .hero__images { width: 240px; height: 200px; }
+    .code { width: 180px; }
+    .btn { padding: 8px 16px; font-size: 12px; margin-right: 10px; }
+    .custom-select { width: 120px; }
+    .select-selected { font-size: 12px; padding: 6px 10px; }
+    .select-items div { font-size: 12px; padding: 6px 10px; }
+    .theme-switcher img { width: 90px; height: 54px; }
+    .footer__copy { font-size: 12px; }
+    .socials a img { width: 32px; height: 32px; }
+    .git_logo { width: 32px; height: 32px; }
+}
