@@ -4,7 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+a {
+    text-decoration: none;
+    color: inherit;
+}
 body {
     background: radial-gradient(circle at 30% 20%, #4b0f2c, #15070a 70%);
     color: #e4e4e4;
@@ -186,6 +189,21 @@ body {
     text-align: center;
 }
 
+.socials a img {
+    transition: 0.2s ease;
+}
+
+.socials a:hover img {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+.projects__grid a .project-card {
+    transition: 0.2s ease;
+}
+.projects__grid a .project-card:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
 .socials img {
     width: 32px;
     margin: 0 10px;
