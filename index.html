@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cz">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- HEADER -->
     <header class="header">
         <div class="container header__inner">
             <div class="logo">NZY</div>
@@ -19,24 +20,18 @@
             </nav>
 
             <div class="langswitcher">
-                <button onclick="setLanguage('cs')">
-                    <img src="img/lang_set_cz.svg">
-                </button>
-                <button onclick="setLanguage('en')">
-                    <img src="img/lang_set_en.svg">
-                </button>
-                <button onclick="setLanguage('uk')">
-                    <img src="img/lang_set_uk.svg">
-                </button>
+                <select id="languageSelect">
+                    <option value="cs">🇨🇿 Czech</option>
+                    <option value="en">🇬🇧 English</option>
+                    <option value="uk">🇺🇦 Українська</option>
+                 </select>
             </div>
         </div>
     </header>
 
-
-    <!-- ============================================== -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container hero__grid">
-
             <div class="hero__text">
                 <h1 data-lang="hero_title"></h1>
                 <p class="hero__p" data-lang="hero_subtitle"></p>
@@ -51,71 +46,61 @@
                 <img class="code code--1" src="img/PRG_BLOCK_1.svg" alt="">
                 <img class="code code--2" src="img/PRG_BLOCK_2.svg" alt="">
             </div>
-
         </div>
     </section>
 
-
-    <!-- ================================================== -->
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="projects">
         <div class="container">
-
             <h2 data-lang="project_title"></h2>
             <p class="projects__desc" data-lang="project_subtitle"></p>
 
             <a class="btn btn--blue projects__btn" data-lang="project_button"></a>
 
             <div class="projects__grid">
-                <a href="#projects">
                 <div class="project-card">
                     <h3 data-lang="project_ASCII"></h3>
                     <img src="img/ascii.svg" class="project-img">
                     <p data-lang="ASCII_dscrp"></p>
                 </div>
-                </a>
-                <a href="#projects">            
                 <div class="project-card">
                     <h3 data-lang="projeck_ANSI"></h3>
                     <img src="img/p2.png" class="project-img">
                     <p data-lang="ANSI_dscrp"></p>
                 </div>
-                </a>
-                <a href="#projects">        
                 <div class="project-card">
                     <h3 data-lang="projec_GREP"></h3>
                     <img src="img/p3.png" class="project-img">
                     <p data-lang="GREP_dscrp"></p>
                 </div>
-                </a>
-                 <a href="#projects">   
                 <div class="project-card">
                     <h3 data-lang="project_ZELV"></h3>
                     <img src="img/p4.png" class="project-img">
                     <p data-lang="ZELV_dscrp"></p>
                 </div>
-                </a>
             </div>
         </div>
     </section>
-<!--==============================================-->
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer__inner">
-                <div class="socials">
-                    <a href="https://t.me/nzayakov" target="_blank">
-                        <img src="img/tg_logo.svg" alt="Telegram">
-                    </a>
-
-                    <a href="https://discord.gg/Nzayakov" target="_blank">
-                        <img src="img/discord_logo.svg" alt="Discord">
-                    </a>
-
-                    <a href="https://github.com/Nzyakov" target="_blank">
-                        <img src="img/git_logo.svg" alt="GitHub">
-                    </a>
-                </div>
+            <div class="socials">
+                <a href="https://t.me/nzayakov" target="_blank">
+                    <img src="img/tg_logo.svg" alt="Telegram">
+                </a>
+                <a href="https://discord.gg/Nzayakov" target="_blank">
+                    <img src="img/discord_logo.svg" alt="Discord">
+                </a>
+                <a href="https://github.com/Nzyakov" target="_blank">
+                    <img src="img/git_logo.svg" alt="GitHub">
+                </a>
+            </div>
             <p class="footer__copy" data-lang="footer_INF"></p>
         </div>
     </footer>
 
+    <!-- Подключаем JS -->
+    <script src="script.js"></script>
 </body>
 </html>

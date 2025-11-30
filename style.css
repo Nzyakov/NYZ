@@ -19,6 +19,20 @@ body {
     background-position: center top;
 }
 
+.langswicher button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.langswicher button img{
+    display: block;
+    width: 32px;
+    height: auto;
+    border: none;
+    outline: none;
+}
 
 
 /* CONTAINER */
