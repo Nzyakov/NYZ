@@ -3,9 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hlavni</title>
+    <title>NZY – Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/qqq.ico" type="image/x-icon">
+
+    <!-- Шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header__inner">
+            <div class="logo">NZY</div>
+
+            <nav class="nav">
+                <a href="#about">O mně</a>
+                <a href="#projects">Projekty</a>
+            </nav>
+
+            <div class="lang">
+                <img src="img/lang_set_cz.svg" alt="CZ">
+            </div>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero__grid">
+
+            <div class="hero__text">
+                <h1>AHOJ! JE SKVĚLÉ,<br>ŽE JSTE TADY.</h1>
+                <p class="hero__p">Vítejte v mém osobním koutku na internetu. Zvu vás, abyste se se mnou seznámili a prohlédli si projekty/práce.</p>
+
+                <div class="hero__buttons">
+                    <a href="#about" class="btn btn--outline">O mně</a>
+                    <a href="#projects" class="btn btn--blue">Projekty</a>
+                </div>
+            </div>
+
+            <div class="hero__images">
+                <img class="code code--1" src="img/PRG_BLOCK_1.svg" alt="">
+                <img class="code code--2" src="img/PRG_BLOCK_2.svg" alt="">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+        <div class="container">
+
+            <h2>NÁHLED PROJEKTŮ</h2>
+            <p class="projects__desc">
+                Většina těchto projektů vznikla v průběhu mého studia na střední škole nebo na univerzitě.<br>
+                Níže se jedná pouze o náhledy (previews).
+            </p>
+
+            <a class="btn btn--blue projects__btn">ZDE</a>
+
+            <div class="projects__grid">
+
+                <div class="project-card">
+                    <h3>ASCII ART GENERATOR</h3>
+                    <img src="img/p1.png" class="project-img">
+                    <p>Program generuje ASCII tvary (obdélníky, rámce, úhlopříčky)…</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>ANSI ESCAPE SEKVENCI</h3>
+                    <img src="img/p2.png" class="project-img">
+                    <p>Program vykresluje animace, schody, květiny pomocí escape sekvencí.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>GREP PARSER</h3>
+                    <img src="img/p3.png" class="project-img">
+                    <p>Vyhledávání, filtrování textu, ignorování velikosti písmen…</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>DYNAMICKÁ ŽELVIČKA</h3>
+                    <img src="img/p4.png" class="project-img">
+                    <p>Simulace želviček na 2D plátně s toroidním přesahem.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+<!--==============================================-->
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer__inner">
+                <div class="socials">
+                    <a href="https://t.me/nzayakov" target="_blank">
+                        <img src="img/tg_logo.svg" alt="Telegram">
+                    </a>
+
+                    <a href="https://discord.gg/Nzayakov" target="_blank">
+                        <img src="img/discord_logo.svg" alt="Discord">
+                    </a>
+
+                    <a href="https://github.com/Nzyakov" target="_blank">
+                        <img src="img/git_logo.svg" alt="GitHub">
+                    </a>
+                </div>
+            <p class="footer__copy">
+                © 2025 | Created by Nazar Yakovenko [Nzayakov]
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
