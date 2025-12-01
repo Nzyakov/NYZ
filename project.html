@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NZY - Projects</title>
+    <link id="themeLink" rel="stylesheet" href="style_dark.css">
+    <link rel="icon" href="img/qqq.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .projects-page-section { padding: 120px 0 80px; }
+        .projects-grid-full { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header__inner">                                                                                                                                                                                                                            
+            <a href="index.html" class="logo">NZY</a>
+            <nav class="nav">
+                <a href="index.html" data-lang="nav_home_link">Domů</a>
+                <a href="about.html" data-lang="nav_about">O mně</a>
+                <a href="projects.html" class="active" style="opacity: 1; color: #FFD233;" data-lang="nav_projects">Projekty</a>
+            </nav>
+            <div class="langswitcher">
+                <div class="custom-select">
+                    <div class="select-selected"><img src="img/lang_set_cz.svg"> Czech</div>
+                    <div class="select-items select-hide">
+                        <div data-lang="cs"><img src="img/lang_set_cz.svg"> Czech</div>
+                        <div data-lang="en"><img src="img/lang_set_en.svg"> English</div>
+                        <div data-lang="uk"><img src="img/lang_set_uk.svg"> Українська</div>
+                    </div>
+                </div>
+            </div>
+            <div class="theme-switcher"><img id="themeSwitcher" src="img/moon.png"></div>
+        </div>
+    </header>
+
+    <section class="projects-page-section">
+        <div class="container">
+            <div class="projects-header">
+                <h1 data-lang="projects_page_title"></h1>
+                <p data-lang="projects_page_desc"></p>
+            </div>
+            <div class="projects-grid-full">
+                <div class="project-card">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <h3 data-lang="project_ASCII"></h3>
+                        <img src="img/ascii.svg" style="width: 40px; height: 40px;">
+                    </div>
+                    <p data-lang="ASCII_dscrp" style="margin-top: 10px;"></p>
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="file-name">ascii_gen.c</span>
+                            <button class="copy-btn">Copy Code</button>
+                        </div>
+                        <pre class="code-content"><code><span class="c-include">#include</span> &lt;stdio.h&gt;
+
+<span class="c-keyword">void</span> <span class="c-func">drawRectangle</span>(<span class="c-keyword">int</span> w, <span class="c-keyword">int</span> h) {
+    <span class="c-keyword">for</span> (<span class="c-keyword">int</span> i = 0; i < h; i++) {
+        <span class="c-keyword">for</span> (<span class="c-keyword">int</span> j = 0; j < w; j++) {
+            <span class="c-keyword">if</span> (i == 0 || i == h-1 || j == 0 || j == w-1)
+                <span class="c-func">printf</span>(<span class="c-string">"x"</span>);
+            <span class="c-keyword">else</span>
+                <span class="c-func">printf</span>(<span class="c-string">" "</span>);
+        }
+        <span class="c-func">printf</span>(<span class="c-string">"\n"</span>);
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <h3 data-lang="projeck_ANSI"></h3>
+                        <img src="img/ANSI.svg" style="width: 40px; height: 40px;">
+                    </div>
+                    <p data-lang="ANSI_dscrp" style="margin-top: 10px;"></p>
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="file-name">ansi_art.c</span>
+                            <button class="copy-btn">Copy Code</button>
+                        </div>
+                        <pre class="code-content"><code><span class="c-include">#include</span> &lt;stdio.h&gt;
+
+<span class="c-keyword">void</span> <span class="c-func">setColor</span>(<span class="c-keyword">int</span> r, <span class="c-keyword">int</span> g, <span class="c-keyword">int</span> b) {
+    <span class="c-func">printf</span>(<span class="c-string">"\033[38;2;%d;%d;%dm"</span>, r, g, b);
+}
+
+<span class="c-keyword">int</span> <span class="c-func">main</span>() {
+    <span class="c-func">setColor</span>(255, 100, 50); <span class="c-comment">// Orange</span>
+    <span class="c-func">printf</span>(<span class="c-string">"Hello ANSI World!\n"</span>);
+    <span class="c-func">printf</span>(<span class="c-string">"\033[0m"</span>); <span class="c-comment">// Reset</span>
+    <span class="c-keyword">return</span> 0;
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <h3 data-lang="projec_GREP"></h3>
+                        <img src="img/GREP.svg" style="width: 40px; height: 40px;">
+                    </div>
+                    <p data-lang="GREP_dscrp" style="margin-top: 10px;"></p>
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="file-name">my_grep.c</span>
+                            <button class="copy-btn">Copy Code</button>
+                        </div>
+                        <pre class="code-content"><code><span class="c-include">#include</span> &lt;string.h&gt;
+<span class="c-include">#include</span> &lt;stdio.h&gt;
+
+<span class="c-keyword">void</span> <span class="c-func">searchFile</span>(<span class="c-keyword">char</span> *fname, <span class="c-keyword">char</span> *str) {
+    FILE *fp = <span class="c-func">fopen</span>(fname, <span class="c-string">"r"</span>);
+    <span class="c-keyword">char</span> line[512];
+    
+    <span class="c-keyword">while</span> (<span class="c-func">fgets</span>(line, 512, fp)) {
+        <span class="c-keyword">if</span> (<span class="c-func">strstr</span>(line, str)) {
+            <span class="c-func">printf</span>(<span class="c-string">"Found: %s"</span>, line);
+        }
+    }
+    <span class="c-func">fclose</span>(fp);
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <h3 data-lang="project_ZELV"></h3>
+                        <img src="img/ZELV.svg" style="width: 40px; height: 40px;">
+                    </div>
+                    <p data-lang="ZELV_dscrp" style="margin-top: 10px;"></p>
+                    <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                            <span class="file-name">turtle.c</span>
+                            <button class="copy-btn">Copy Code</button>
+                        </div>
+                        <pre class="code-content"><code><span class="c-keyword">typedef struct</span> {
+    <span class="c-keyword">int</span> x, y;
+    <span class="c-keyword">int</span> angle;
+} Turtle;
+
+<span class="c-keyword">void</span> <span class="c-func">moveTurtle</span>(Turtle *t, <span class="c-keyword">int</span> steps) {
+    <span class="c-comment">// Simplified movement logic</span>
+    <span class="c-keyword">if</span> (t->angle == 0) t->x += steps;
+    <span class="c-keyword">if</span> (t->angle == 90) t->y -= steps;
+    
+    <span class="c-comment">// Toroidal wrap (screen borders)</span>
+    <span class="c-keyword">if</span> (t->x > 100) t->x = 0;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="socials">
+                <a href="https://t.me/nzayakov" target="_blank"><img src="img/tg_logo.svg"></a>
+                <a href="https://discord.gg/vnrNCaxX" target="_blank"><img src="img/discord_logo.svg"></a>
+                <a href="https://github.com/Nzyakov" target="_blank"><img class="git_logo" src="img/git_logo.svg"></a>
+            </div>
+            <p class="footer__copy" data-lang="footer_INF"></p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

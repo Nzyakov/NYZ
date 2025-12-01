@@ -1,12 +1,11 @@
 let currentLang = localStorage.getItem('language') || 'cs';
 let currentTheme = localStorage.getItem('theme') || 'dark';
 
+// === LANGUAGE HANDLING ===
 function setLanguage(lang) {
     fetch(`Lang/${lang}.json`)
         .then(res => {
-            if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
-            }
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             return res.json();
         })
         .then(data => {
@@ -17,21 +16,18 @@ function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('language', lang);
             
+            // Update custom select
             const itemsContainer = document.querySelector('.select-items');
             if (itemsContainer) {
                 const activeItem = itemsContainer.querySelector(`[data-lang="${currentLang}"]`);
                 const selected = document.querySelector('.select-selected');
-                if (activeItem && selected) {
-                     selected.innerHTML = activeItem.innerHTML;
-                }
+                if (activeItem && selected) selected.innerHTML = activeItem.innerHTML;
             }
         })
-        .catch(err => {
-            console.error("Ошибка загрузки файла перевода:", err);
-            console.log("Убедитесь, что файлы .json лежат в папке 'Lang' и запущен локальный сервер.");
-        });
+        .catch(err => console.error("Language load error:", err));
 }
 
+// === THEME HANDLING ===
 function setTheme(theme) {
     const themeLink = document.getElementById('themeLink');
     const switcherImg = document.getElementById('themeSwitcher');
@@ -51,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(currentLang);
     setTheme(currentTheme);
 
+    // Language Dropdown Logic
     const selected = document.querySelector('.select-selected');
     const itemsContainer = document.querySelector('.select-items');
     
@@ -73,12 +70,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.addEventListener('click', e => {
-            if (!e.target.closest('.custom-select')) {
-                itemsContainer.classList.add('select-hide');
-            }
+            if (!e.target.closest('.custom-select')) itemsContainer.classList.add('select-hide');
         });
     }
 
+    // Theme Switcher Logic
     const themeSwitcher = document.getElementById('themeSwitcher');
     if (themeSwitcher) {
         themeSwitcher.addEventListener('click', () => {
@@ -87,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Skills Animation (About page)
     const skillBars = document.querySelectorAll('.skill-fill');
     if (skillBars.length > 0) {
         const observer = new IntersectionObserver((entries) => {
@@ -94,16 +91,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.isIntersecting) {
                     const bar = entry.target;
                     const targetWidth = bar.getAttribute('data-width');
-                    if (targetWidth) {
-                        bar.style.width = targetWidth;
-                    }
+                    if (targetWidth) bar.style.width = targetWidth;
                     observer.unobserve(bar); 
                 }
             });
         }, { threshold: 0.2 });
-
-        skillBars.forEach(bar => {
-            observer.observe(bar);
-        });
+        skillBars.forEach(bar => observer.observe(bar));
     }
+
+    // Code Copy Button (Projects page)
+    const copyBtns = document.querySelectorAll('.copy-btn');
+    copyBtns.forEach(button => {
+        button.addEventListener('click', () => {
+            const codeBlock = button.closest('.code-window').querySelector('code');
+            const codeText = codeBlock.innerText;
+
+            navigator.clipboard.writeText(codeText).then(() => {
+                const originalText = button.innerText;
+                button.innerText = "Copied!";
+                button.style.borderColor = "#27c93f";
+                button.style.color = "#27c93f";
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.borderColor = "";
+                    button.style.color = "";
+                }, 2000);
+            }).catch(err => console.error('Copy failed:', err));
+        });
+    });
 });
