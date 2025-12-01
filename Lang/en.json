@@ -15,5 +15,32 @@
   "GREP_dscrp": "GREP PARSER - the program parses arguments, searches text in an input file with optional case-insensitivity, and prints the found lines.",
   "project_ZELV": "DYNAMIC TURTLE",
   "ZELV_dscrp": "DYNAMIC TURTLE - the program controls turtles (max. 3) on a dynamically allocated 2D canvas, which move, rotate, and draw/erase pixels 'o' with toroidal wrapping.",
-  "footer_INF": "© 2025 | Created by Nazar Yakovenko [Nzayakov]"
+  "footer_INF": "© 2025 | Created by Nazar Yakovenko [Nzayakov]",
+
+  
+  "nav_home_link": "Home",
+  "nav_about": "About Me",
+  "about_title": "WHO AM I?",
+  "about_desc": "My name is Nazar Yakovenko (2006). I am a student in Ostrava with an interest in electrical engineering and programming. I am independent, hardworking, and eager to learn new things. In my free time, I play rhythm guitar and keys in a band.",
+  "skills_title": "Technical Skills",
+  "lvl_adv": "Advanced",
+  "lvl_beg": "Beginner",
+  "lvl_mid": "Intermediate",
+  "lvl_multi": "UA, RU, CZ, EN",
+  "lang_skill": "Languages",
+  "edu_title": "Education",
+  "work_title": "Experience",
+  "edu_1_title": "Electrical Engineering",
+  "edu_1_place": "SPŠ Electrical Engineering and CS, Ostrava",
+  "edu_1_desc": "High school with Matura",
+  "edu_2_title": "Secondary Education",
+  "job_1_date": "April 2025 - August 2025",
+  "job_1_title": "Production Operator",
+  "job_1_desc": "Production, assembly, quality control of coolers and radiators.",
+  "job_2_date": "Nov 2024 - April 2025",
+  "job_2_title": "Restaurant Manager / Lead",
+  "job_2_desc": "Barista, bartender, cashier, waiter.",
+  "job_3_date": "July 2024 - Sept 2024",
+  "job_3_title": "Electrician",
+  "job_3_desc": "Electrical installation work in switchboard production."
 }
