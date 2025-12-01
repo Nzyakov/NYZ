@@ -17,7 +17,7 @@
   "ZELV_dscrp": "DYNAMIC TURTLE - the program controls turtles (max. 3) on a dynamically allocated 2D canvas, which move, rotate, and draw/erase pixels 'o' with toroidal wrapping.",
   "footer_INF": "© 2025 | Created by Nazar Yakovenko [Nzayakov]",
 
-  
+
   "nav_home_link": "Home",
   "nav_about": "About Me",
   "about_title": "WHO AM I?",
@@ -26,7 +26,7 @@
   "lvl_adv": "Advanced",
   "lvl_beg": "Beginner",
   "lvl_mid": "Intermediate",
-  "lvl_multi": "UA, RU, CZ, EN",
+  "lvl_multi": "UA, CZ, EN",
   "lang_skill": "Languages",
   "edu_title": "Education",
   "work_title": "Experience",
