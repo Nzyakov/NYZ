@@ -16,7 +16,6 @@ function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('language', lang);
             
-            // Update custom select
             const itemsContainer = document.querySelector('.select-items');
             if (itemsContainer) {
                 const activeItem = itemsContainer.querySelector(`[data-lang="${currentLang}"]`);
@@ -27,27 +26,52 @@ function setLanguage(lang) {
         .catch(err => console.error("Language load error:", err));
 }
 
-// === THEME HANDLING ===
+// === THEME HANDLING (SMOOTH) ===
 function setTheme(theme) {
-    const themeLink = document.getElementById('themeLink');
     const switcherImg = document.getElementById('themeSwitcher');
     
-    if (theme === 'dark') {
-        themeLink.href = 'style_dark.css';
-        if(switcherImg) switcherImg.src = 'img/sun.png';
-    } else {
-        themeLink.href = 'style_light.css';
+    // Toggle class on body
+    if (theme === 'light') {
+        document.body.classList.add('light-theme');
         if(switcherImg) switcherImg.src = 'img/moon.png';
+    } else {
+        document.body.classList.remove('light-theme');
+        if(switcherImg) switcherImg.src = 'img/sun.png';
     }
+    
     currentTheme = theme;
     localStorage.setItem('theme', theme);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // (FADE IN) 
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 50);
+
+    // (FADE OUT) 
+    const links = document.querySelectorAll('a');
+    
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            
+            if (href && !href.startsWith('#') && !link.target && href !== window.location.pathname.split('/').pop()) {
+                e.preventDefault();
+                document.body.classList.remove('loaded'); 
+
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 350);
+            }
+        });
+    });
+    // Apply saved settings
     setLanguage(currentLang);
     setTheme(currentTheme);
 
-    // Language Dropdown Logic
+    // Language Menu Logic
     const selected = document.querySelector('.select-selected');
     const itemsContainer = document.querySelector('.select-items');
     
@@ -78,12 +102,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeSwitcher = document.getElementById('themeSwitcher');
     if (themeSwitcher) {
         themeSwitcher.addEventListener('click', () => {
+            // Toggle theme
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             setTheme(newTheme);
         });
     }
 
-    // Skills Animation (About page)
+    // Skills Animation
     const skillBars = document.querySelectorAll('.skill-fill');
     if (skillBars.length > 0) {
         const observer = new IntersectionObserver((entries) => {
@@ -99,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         skillBars.forEach(bar => observer.observe(bar));
     }
 
-    // Code Copy Button (Projects page)
+    // Copy Code Button
     const copyBtns = document.querySelectorAll('.copy-btn');
     copyBtns.forEach(button => {
         button.addEventListener('click', () => {
