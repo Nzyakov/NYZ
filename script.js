@@ -1,7 +1,6 @@
 let currentLang = localStorage.getItem('language') || 'cs';
 let currentTheme = localStorage.getItem('theme') || 'dark';
 
-// === LANGUAGE HANDLING ===
 function setLanguage(lang) {
     fetch(`Lang/${lang}.json`)
         .then(res => {
@@ -26,11 +25,9 @@ function setLanguage(lang) {
         .catch(err => console.error("Language load error:", err));
 }
 
-// === THEME HANDLING (SMOOTH) ===
 function setTheme(theme) {
     const switcherImg = document.getElementById('themeSwitcher');
     
-    // Toggle class on body
     if (theme === 'light') {
         document.body.classList.add('light-theme');
         if(switcherImg) switcherImg.src = 'img/moon.png';
@@ -43,14 +40,82 @@ function setTheme(theme) {
     localStorage.setItem('theme', theme);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function setupMobileNavigation() {
+    const nav = document.querySelector('.nav');
+    if (!nav) return;
+    
+    if (window.innerWidth <= 768) {
+        if (!document.querySelector('.mobile-menu-btn')) {
+            const menuBtn = document.createElement('button');
+            menuBtn.className = 'mobile-menu-btn';
+            menuBtn.innerHTML = '☰';
+            
+            const headerInner = document.querySelector('.header__inner');
+            if (headerInner) {
+                headerInner.insertBefore(menuBtn, document.querySelector('.langswitcher'));
+            }
+            
+            const overlay = document.createElement('div');
+            overlay.className = 'nav-overlay';
+            document.body.appendChild(overlay);
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.innerHTML = '×';
+            closeBtn.style.cssText = `
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: transparent;
+                border: none;
+                color: var(--accent-yellow);
+                font-size: 32px;
+                cursor: pointer;
+            `;
+            nav.appendChild(closeBtn);
+            
+            menuBtn.addEventListener('click', () => {
+                nav.style.left = '0';
+                overlay.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeBtn.addEventListener('click', () => {
+                nav.style.left = '-100%';
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            overlay.addEventListener('click', () => {
+                nav.style.left = '-100%';
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.style.left = '-100%';
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
+    } else {
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const overlay = document.querySelector('.nav-overlay');
+        
+        if (menuBtn) menuBtn.style.display = 'none';
+        if (overlay) overlay.style.display = 'none';
+        
+        nav.style.cssText = '';
+        document.body.style.overflow = '';
+    }
+}
 
-    // (FADE IN) 
+document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 50);
 
-    // (FADE OUT) 
     const links = document.querySelectorAll('a');
     
     links.forEach(link => {
@@ -59,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (href && !href.startsWith('#') && !link.target && href !== window.location.pathname.split('/').pop()) {
                 e.preventDefault();
-                document.body.classList.remove('loaded'); 
+                document.body.classList.remove('loaded');
 
                 setTimeout(() => {
                     window.location.href = href;
@@ -67,11 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // Apply saved settings
+
     setLanguage(currentLang);
     setTheme(currentTheme);
 
-    // Language Menu Logic
     const selected = document.querySelector('.select-selected');
     const itemsContainer = document.querySelector('.select-items');
     
@@ -98,17 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Theme Switcher Logic
     const themeSwitcher = document.getElementById('themeSwitcher');
     if (themeSwitcher) {
         themeSwitcher.addEventListener('click', () => {
-            // Toggle theme
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             setTheme(newTheme);
         });
     }
 
-    // Skills Animation
     const skillBars = document.querySelectorAll('.skill-fill');
     if (skillBars.length > 0) {
         const observer = new IntersectionObserver((entries) => {
@@ -117,14 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     const bar = entry.target;
                     const targetWidth = bar.getAttribute('data-width');
                     if (targetWidth) bar.style.width = targetWidth;
-                    observer.unobserve(bar); 
+                    observer.unobserve(bar);
                 }
             });
         }, { threshold: 0.2 });
         skillBars.forEach(bar => observer.observe(bar));
     }
 
-    // Copy Code Button
     const copyBtns = document.querySelectorAll('.copy-btn');
     copyBtns.forEach(button => {
         button.addEventListener('click', () => {
@@ -144,4 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }).catch(err => console.error('Copy failed:', err));
         });
     });
+
+
 });
