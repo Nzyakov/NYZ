@@ -191,6 +191,7 @@ h1, h2, h3, p, span, a, div, .project-card, .btn, .header, .resume-item, .skill-
 .footer__copy { color: var(--text-dark); }
 
 /* MEDIA */
+/* MEDIA QUERIES */
 @media (max-width: 1080px) { 
     .projects__grid { grid-template-columns: repeat(2, 1fr); } 
 }
@@ -205,34 +206,50 @@ h1, h2, h3, p, span, a, div, .project-card, .btn, .header, .resume-item, .skill-
 @media (max-width: 580px) {
     .header__inner {
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        justify-content: space-between;
+        gap: 0;
+        padding: 0 15px;
     }
     .logo {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 5px;
+        width: auto;
+        font-size: 24px;
+        margin-left: 0;
+        text-align: left;
     }
     .nav {
+        display: none;
+    }
+    .langswitcher, .theme-switcher {
         order: 1;
-        width: 100%;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
-    .nav a {
-        margin: 0 10px;
-        font-size: 14px;
+    .custom-select { width: 100px; }
+    .select-selected { padding: 6px 8px; font-size: 13px; }
+    .theme-switcher img { width: 40px; height: auto; }
+    .hero { padding: 100px 0 50px; }
+    .hero__text h1 { 
+        font-size: 32px;
+        line-height: 1.3;
+        margin-bottom: 20px;
     }
-    .hero__text h1 { font-size: 44px; }
-    .projects-header h1 { font-size: 36px; }
-    .about__text h2 { font-size: 36px; }
-    .langswitcher {
-        order: 2;
+    .hero__p { 
+        font-size: 16px; 
+        max-width: 100%;
+        margin: 0 auto 30px;
     }
-    .theme-switcher {
-        order: 3;
+    .projects-page-section, .about-section { padding: 80px 0 50px; }
+    .projects-grid-full, .resume-grid { 
+        grid-template-columns: 1fr !important;
+        gap: 20px;
     }
-    .hero__buttons .btn {
-        padding: 8px 16px;
-        font-size: 14px;
+    .projects-header h1, .about__text h2 { font-size: 32px; }
+    .project-card { 
+        padding: 15px; 
     }
+    .code-window { margin: 10px 0; }
+    .code-content { font-size: 11px; }
+    .footer { padding: 30px 0; }
+    .footer__copy { font-size: 12px; }
 }
